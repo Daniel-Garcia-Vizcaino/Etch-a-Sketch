@@ -1,11 +1,13 @@
-.square {
+.gridRow, .gridCol {
     border: solid black 1px;
-    height: 10px;
-    width: 10px;
-    display: block;
 }
 
-div {
-    display: block;
-    border: solid black 1px;
+.gridRow {
+    height: 40px;
+    width: 40px;
+}
+
+.gridCol {
+    height: 10px;
+    width: 10px;
 }

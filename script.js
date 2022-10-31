@@ -1,17 +1,22 @@
 const container = document.getElementById("container");
-const square = document.createElement("div");
-square.className = "square"
+const gridRow = document.createElement("div");
+const rowClassList = gridRow.classList;
+rowClassList.add("row");
+rowClassList.add("gridRow");
+const gridCol = document.createElement("div");
+const colClassList = gridCol.classList;
+colClassList.add("col");
+colClassList.add("gridCol");
 
-let gridNum = 16;
-
-function setNum (x) {
-    gridNum = x;
-}
-
-function addGrid (gridNum) {
-    for ( let i = 0; i < gridNum; i++) {
-        container.appendChild(square);
+function addGrid (x) {
+    for ( let i = 0; i < x; i++) {
+        container.appendChild(gridRow);
+        for ( let i = 0; i < 4; i++ ) {
+            gridRow.appendChild(gridCol);
+        }
     }
 }
 
-addGrid();
+gridCol.innerText = "X";
+
+addGrid(16);
